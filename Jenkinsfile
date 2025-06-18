@@ -9,8 +9,7 @@ pipeline {
     stages { 
         stage('Checkout') { 
             steps { 
-                git 
-'https://github.com/maazbinhasan/Petclinic.git' 
+                git 'https://github.com/maazbinhasan/Petclinic.git' 
             } 
         } 
  
@@ -28,22 +27,18 @@ pipeline {
  
         stage('Archive Artifact') { 
             steps { 
-                archiveArtifacts artifacts: 'target/*.jar', 
-fingerprint: true 
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true 
             } 
         } 
     } 
  
     post { 
-        success { 
-            echo "
- ✅
- Build successful!" 
-        } 
-        failure { 
-            echo "
- ❌
- Build failed!" 
-        } 
-    } 
+        success {
+            echo "✅ Build successful!"
+        }
+        failure {
+            echo "❌ Build failed!"
+        }
+    }
 }
+
