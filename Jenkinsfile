@@ -5,6 +5,10 @@ pipeline {
         maven 'Maven 3.8.7' 
         jdk 'Java 11' 
     } 
+	environment {
+        JAVA_HOME = tool 'Java 11'
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
+    }
  
     stages { 
         stage('Checkout') { 
