@@ -36,14 +36,14 @@ fingerprint: true
  
     post { 
         success { 
-            echo '
+            echo "
  ✅
- Build successful!' 
+ Build successful!" 
         } 
         failure { 
-            echo '
+            echo "
  ❌
- Build failed!' 
+ Build failed!" 
         } 
     } 
 }
